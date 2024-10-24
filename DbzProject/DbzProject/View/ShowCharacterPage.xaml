@@ -1,0 +1,51 @@
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="DbzProject.View.ShowCharacterPage"
+             xmlns:viewmodel="clr-namespace:DbzProject.ViewModel"           
+             xmlns:model="clr-namespace:DbzProject.Model">
+
+    <!-- ScrollView pour permettre le défilement -->
+    <ScrollView>
+        <!-- VerticalStackLayout pour organiser les éléments de manière verticale -->
+        <VerticalStackLayout Padding="30,20" Spacing="25">
+            <!-- Titre -->
+            <Label Text="Bienvenue dans votre liste de personnages personnelle" 
+                   FontSize="Large" 
+                   FontAttributes="Bold"
+                   TextColor="White" 
+                   HorizontalOptions="Center"/>
+
+            <!-- CollectionView pour afficher la liste de personnages -->
+            <CollectionView ItemsSource="{Binding MyObservableCharacterDbz}" SelectionMode="None">
+                <!-- Modèle d'élément de la CollectionView -->
+                <CollectionView.ItemTemplate>
+                    <DataTemplate x:DataType="model:DbzCharacter">
+                        <!-- Modèle d'élément -->
+                        <Border Stroke="Black" StrokeThickness="1" BackgroundColor="Transparent" StrokeShape="RoundRectangle 10">
+                            <!-- Grille pour organiser les éléments de chaque élément de la CollectionView -->
+                            <Grid RowSpacing="10" Padding="10">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto" />
+                                    <ColumnDefinition Width="*" />
+                                </Grid.ColumnDefinitions>
+                                <!-- Image -->
+                                <Image Grid.Column="0"
+                                       HeightRequest="300"
+                                       Source="{Binding Picture}"
+                                       Aspect="AspectFit"
+                                       VerticalOptions="Start" />
+                                <!-- VerticalStackLayout pour organiser le texte -->
+                                <VerticalStackLayout Grid.Column="1" VerticalOptions="Start">
+                                    <Label Text="{Binding Name}" FontSize="Title" FontAttributes="Bold"/>
+                                    <Label Text="{Binding Race}" FontSize="Body" />
+                                    <Label Text="{Binding Attack}" FontSize="Body" />
+                                </VerticalStackLayout>
+                            </Grid>
+                        </Border>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>

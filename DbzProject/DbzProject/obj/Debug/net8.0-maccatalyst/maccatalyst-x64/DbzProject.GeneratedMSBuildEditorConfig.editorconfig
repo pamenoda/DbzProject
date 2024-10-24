@@ -1,0 +1,83 @@
+is_global = true
+build_property.EnableAotAnalyzer = 
+build_property.EnableSingleFileAnalyzer = 
+build_property.EnableTrimAnalyzer = false
+build_property.IncludeAllContentForSelfExtract = 
+build_property.TargetFramework = net8.0-maccatalyst
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = 
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = false
+build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = DbzProject
+build_property.ProjectDir = D:\projet\DbzProject\
+build_property.EnableComHosting = 
+build_property.EnableGeneratedComInterfaceComImportInterop = 
+
+[D:/projet/DbzProject/App.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = DbzProject.App.xaml
+build_metadata.AdditionalFiles.TargetPath = App.xaml
+build_metadata.AdditionalFiles.RelativePath = App.xaml
+
+[D:/projet/DbzProject/AppShell.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = DbzProject.AppShell.xaml
+build_metadata.AdditionalFiles.TargetPath = AppShell.xaml
+build_metadata.AdditionalFiles.RelativePath = AppShell.xaml
+
+[D:/projet/DbzProject/Resources/Styles/Colors.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = DbzProject.Resources.Styles.Colors.xaml
+build_metadata.AdditionalFiles.TargetPath = Resources\Styles\Colors.xaml
+build_metadata.AdditionalFiles.RelativePath = Resources\Styles\Colors.xaml
+
+[D:/projet/DbzProject/Resources/Styles/Styles.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = DbzProject.Resources.Styles.Styles.xaml
+build_metadata.AdditionalFiles.TargetPath = Resources\Styles\Styles.xaml
+build_metadata.AdditionalFiles.RelativePath = Resources\Styles\Styles.xaml
+
+[D:/projet/DbzProject/View/CharactersCSVExportPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = DbzProject.View.CharactersCSVExportPage.xaml
+build_metadata.AdditionalFiles.TargetPath = View\CharactersCSVExportPage.xaml
+build_metadata.AdditionalFiles.RelativePath = View\CharactersCSVExportPage.xaml
+
+[D:/projet/DbzProject/View/ChartCharactersPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = DbzProject.View.ChartCharactersPage.xaml
+build_metadata.AdditionalFiles.TargetPath = View\ChartCharactersPage.xaml
+build_metadata.AdditionalFiles.RelativePath = View\ChartCharactersPage.xaml
+
+[D:/projet/DbzProject/View/FormCharacterPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = DbzProject.View.FormCharacterPage.xaml
+build_metadata.AdditionalFiles.TargetPath = View\FormCharacterPage.xaml
+build_metadata.AdditionalFiles.RelativePath = View\FormCharacterPage.xaml
+
+[D:/projet/DbzProject/View/MainMenuPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = DbzProject.View.MainMenuPage.xaml
+build_metadata.AdditionalFiles.TargetPath = View\MainMenuPage.xaml
+build_metadata.AdditionalFiles.RelativePath = View\MainMenuPage.xaml
+
+[D:/projet/DbzProject/View/MainPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = DbzProject.View.MainPage.xaml
+build_metadata.AdditionalFiles.TargetPath = View\MainPage.xaml
+build_metadata.AdditionalFiles.RelativePath = View\MainPage.xaml
+
+[D:/projet/DbzProject/View/RegisterPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = DbzProject.View.RegisterPage.xaml
+build_metadata.AdditionalFiles.TargetPath = View\RegisterPage.xaml
+build_metadata.AdditionalFiles.RelativePath = View\RegisterPage.xaml
+
+[D:/projet/DbzProject/View/ShowCharacterPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = DbzProject.View.ShowCharacterPage.xaml
+build_metadata.AdditionalFiles.TargetPath = View\ShowCharacterPage.xaml
+build_metadata.AdditionalFiles.RelativePath = View\ShowCharacterPage.xaml

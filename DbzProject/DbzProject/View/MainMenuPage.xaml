@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="DbzProject.View.MainMenuPage"
+             xmlns:viewmodel="clr-namespace:DbzProject.ViewModel"
+             BackgroundImageSource="kamehouse.png">
+
+    <ContentPage.Resources>
+        <Style TargetType="Label">
+            <Setter Property="TextColor" Value="White"/>
+            <Setter Property="HorizontalOptions" Value="Center"/>
+            <Setter Property="Margin" Value="0,10,0,10"/>
+        </Style>
+        <Style TargetType="Button">
+            <Setter Property="HeightRequest" Value="50"/>
+            <Setter Property="WidthRequest" Value="200"/>
+            <Setter Property="BackgroundColor" Value="#3b5998"/>
+            <Setter Property="TextColor" Value="White"/>
+            <Setter Property="CornerRadius" Value="25"/>
+            <Setter Property="HorizontalOptions" Value="Center"/>
+            <Setter Property="Margin" Value="0,10,0,10"/>
+        </Style>
+        <Style TargetType="Picker">
+            <Setter Property="WidthRequest" Value="200"/>
+            <Setter Property="BackgroundColor" Value="White"/>
+            <Setter Property="TextColor" Value="Black"/>
+            <Setter Property="HorizontalOptions" Value="Center"/>
+            <Setter Property="Margin" Value="0,10,0,10"/>
+        </Style>
+    </ContentPage.Resources>
+
+    <ContentPage.Content>
+        <Grid Padding="20">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <!-- Titre -->
+            <Label Text="Bienvenue dans votre espace personnel" 
+                   FontSize="Large" 
+                   Grid.Row="0"/>
+
+            <ScrollView Grid.Row="1">
+                <VerticalStackLayout Spacing="20" HorizontalOptions="FillAndExpand">
+                    <!-- Nom d'utilisateur -->
+                    <Label Text="{Binding Username}" 
+                           TextColor="Red" 
+                           FontSize="Header"/>
+
+                    <!-- Boutons -->
+                    <Button Text="Ajouter Personnage"  
+                            Command="{Binding GoToAddFormPageCharacterCommand}"
+                            IsEnabled="{Binding IsNotBusy}"/>
+
+                    <Button Text="Voir ma collection"  
+                            Command="{Binding GoToCharactersPageCommand}"
+                            IsEnabled="{Binding IsNotBusy}"/>
+
+                    <Button Text="Voir le graphique "  
+                            Command="{Binding GoToChartCharactersPageCommand}"
+                            IsEnabled="{Binding IsNotBusy}"/>
+
+                    <Button Text="Exporter collection CSV"  
+                            Command="{Binding GoToExportCSVPageCommand}"
+                            IsEnabled="{Binding IsNotBusy}"/>
+
+                    <!-- Sélection du port COM -->
+                    <Label Text="Sélectionnez un port COM pour ajouter via un scanner :" 
+                           FontSize="Medium"
+                           TextColor="Red"
+                           FontAttributes="Bold"/>
+                    <!-- combo box comme en java 4  portsAvailable = liste des nom des ports et selected celui selectionné -->
+                    <Picker ItemsSource="{Binding PortsAvailable}" 
+                            SelectedItem="{Binding ComPortSelectedByUser}"
+                            SelectedIndexChanged="ChangeComPort"/>
+                    <!-- SelectedIndexChanged appele changeComPort de MainMenuPage.xaml.cs-->
+
+                </VerticalStackLayout>
+            </ScrollView>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:micro="clr-namespace:Microcharts.Maui;assembly=Microcharts.Maui"
+             xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+             x:Class="DbzProject.View.ChartCharactersPage">
+
+    <!-- Mise en page verticale pour la page -->
+    <VerticalStackLayout VerticalOptions="FillAndExpand" BackgroundColor="White">
+        <!-- Titre de la page -->
+        <Label Text="Graphique des personnages de Dragon Ball Z" FontSize="20" HorizontalOptions="Center" BackgroundColor="White" TextColor="Black" />
+        <!-- Vue du graphique -->
+        <micro:ChartView Chart="{Binding MyObservableChart}" HeightRequest="800" VerticalOptions="FillAndExpand" />
+    </VerticalStackLayout>
+</ContentPage>

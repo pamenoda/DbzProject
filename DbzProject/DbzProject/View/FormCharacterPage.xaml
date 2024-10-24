@@ -1,0 +1,98 @@
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="DbzProject.View.FormCharacterPage"
+             BackgroundImageSource="backgroundhome.jpg">
+    <!-- css -->
+    <ContentPage.Resources>
+        <Style TargetType="Entry">
+            <Setter Property="BackgroundColor" Value="White"/>
+            <Setter Property="TextColor" Value="Black"/>
+            <Setter Property="PlaceholderColor" Value="Gray"/>
+            <Setter Property="HeightRequest" Value="50"/>
+            <Setter Property="WidthRequest" Value="300"/>
+            <Setter Property="HorizontalOptions" Value="Center"/>
+            <Setter Property="Margin" Value="0,10,0,0"/>
+        </Style>
+        <Style TargetType="Button">
+            <Setter Property="HeightRequest" Value="50"/>
+            <Setter Property="WidthRequest" Value="200"/>
+            <Setter Property="BackgroundColor" Value="#3b5998"/>
+            <Setter Property="TextColor" Value="White"/>
+            <Setter Property="CornerRadius" Value="25"/>
+            <Setter Property="HorizontalOptions" Value="Center"/>
+            <Setter Property="Margin" Value="0,10,0,0"/>
+        </Style>
+        <Style TargetType="Border">
+            <Setter Property="Stroke" Value="Black"/>
+            <Setter Property="StrokeThickness" Value="1"/>
+            <Setter Property="BackgroundColor" Value="#f5f5f5"/>
+            <Setter Property="StrokeShape" Value="RoundRectangle 10"/>
+            <Setter Property="HorizontalOptions" Value="Center"/>
+            <Setter Property="WidthRequest" Value="320"/>
+            <Setter Property="Margin" Value="0,10,0,0"/>
+        </Style>
+    </ContentPage.Resources>
+
+    <Grid Padding="20">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!-- Titre -->
+        <Label Text="Bienvenue dans le formulaire d'ajout de personnage"
+               FontSize="Large"
+               TextColor="Black"
+               FontAttributes="Bold"
+               HorizontalOptions="Center"
+               Margin="0,20,0,20"
+               Grid.Row="0"/>
+
+        <ScrollView Grid.Row="1">
+            <VerticalStackLayout Spacing="20" HorizontalOptions="FillAndExpand">
+
+                <!-- Entry pour l'ID -->
+                <Border>
+                    <Entry x:Name="scan"
+                           Placeholder="Enter the Id by Scanner"
+                           MaxLength="20"
+                           Text="{Binding Id}"/>
+                </Border>
+
+                <!-- Entry pour le nom -->
+                <Border>
+                    <Entry x:Name="nameEntry"
+                           Placeholder="Enter the name"
+                           MaxLength="20"
+                           Text="{Binding Name}"/>
+                </Border>
+
+                <!-- Entry pour la race -->
+                <Border>
+                    <Entry x:Name="raceEntry"
+                           Placeholder="Enter the race"
+                           MaxLength="20"
+                           Text="{Binding Race}"/>
+                </Border>
+
+                <!-- Entry pour les points d'attaque -->
+                <Border>
+                    <Entry x:Name="attackEntry"
+                           Placeholder="Enter attack points"
+                           Keyboard="Numeric"
+                           Text="{Binding Attack}"/>
+                </Border>
+
+                <!-- Bouton pour sélectionner une image -->
+                <Button Text="{Binding ImageTextButton}"
+                        Command="{Binding SelectImageCommand}"
+                        IsEnabled="{Binding IsNotBusy}"/>
+
+                <!-- Bouton pour sauvegarder -->
+                <Button Text="Save"
+                        IsEnabled="{Binding IsNotBusy}"
+                        Command="{Binding SaveCharacterCommand}"/>
+            </VerticalStackLayout>
+        </ScrollView>
+    </Grid>
+</ContentPage>

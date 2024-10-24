@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="DbzProject.View.CharactersCSVExportPage"
+             xmlns:viewmodel="clr-namespace:DbzProject.ViewModel"
+             BackgroundImageSource="shenroexport.jpg">
+
+    <!-- Définition des ressources de la page -->
+    <ContentPage.Resources>
+        <!-- Style pour les CheckBox -->
+        <Style x:Key="CheckBoxStyle" TargetType="CheckBox">
+            <Setter Property="Margin" Value="5"/>
+            <Setter Property="Color" Value="White"/>
+        </Style>
+    </ContentPage.Resources>
+
+    <!-- Définition de la mise en page verticale -->
+    <VerticalStackLayout Spacing="20" HorizontalOptions="Center" VerticalOptions="Center">
+        <!-- Titre -->
+        <Label Text="Bienvenue dans la page d'exportation de personnages" 
+               FontSize="Large" 
+               TextColor="White" 
+               FontAttributes="Bold"
+               HorizontalOptions="Center"/>
+
+        <!-- Grille pour les options d'export -->
+        <Grid Margin="10">
+            <!-- Labels et CheckBoxes pour chaque champ -->
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+
+            <!-- Label et CheckBox pour le champ "Nom" -->
+            <Label Text="Nom :" VerticalOptions="Center"  TextColor="Black" FontSize="Large" FontAttributes="Bold" />
+            <CheckBox IsChecked="{Binding IsNameSelected}" 
+                      Grid.Column="1" 
+                      VerticalOptions="Center"
+                      Style="{StaticResource CheckBoxStyle}"/>
+
+            <!-- Label et CheckBox pour le champ "Race" -->
+            <Label Text="Race :" Grid.Row="1" VerticalOptions="Center" TextColor="Black" FontSize="Large" FontAttributes="Bold" />
+            <CheckBox IsChecked="{Binding IsRaceSelected}" 
+                      Grid.Row="1" 
+                      Grid.Column="1" 
+                      VerticalOptions="Center"
+                      Style="{StaticResource CheckBoxStyle}"/>
+
+            <!-- Label et CheckBox pour le champ "Attaque" -->
+            <Label Text="Attaque :" Grid.Row="2" VerticalOptions="Center"  TextColor="black" FontSize="Large" FontAttributes="Bold"/>
+            <CheckBox IsChecked="{Binding IsAttackSelected}" 
+                      Grid.Row="2" 
+                      Grid.Column="1" 
+                      VerticalOptions="Center"
+                      Style="{StaticResource CheckBoxStyle}"/>
+        </Grid>
+
+        <!-- Bouton d'export -->
+        <Button Text="Export CSV" 
+                Command="{Binding ExportCommand}" 
+                Margin="10"
+                HorizontalOptions="Center"
+                WidthRequest="200"
+                BackgroundColor="#3b5998"
+                TextColor="White"/>
+    </VerticalStackLayout>
+</ContentPage>
